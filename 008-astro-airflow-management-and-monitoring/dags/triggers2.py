@@ -1,8 +1,7 @@
-from datetime import datetime
 from airflow import DAG
 
-from airflow.operators.dummy_operator import DummyOperator
-from airflow.operators.bash_operator import BashOperator
+from airflow.operators.empty import EmptyOperator
+from airflow.operators.bash import BashOperator
 
 
 with DAG(
@@ -10,9 +9,9 @@ with DAG(
     schedule=None,
     catchup=False,
     tags=['Helion']
-	):
+):
 
-    start = DummyOperator(
+    start = EmptyOperator(
         task_id="start"
     )
 
@@ -34,7 +33,7 @@ with DAG(
         bash_command="ls /airflow-fake", # fikcyjny folder
     )
 
-    end = DummyOperator(
+    end = EmptyOperator(
         task_id="end",
         # trigger_rule="one_failed" # Zadanie uruchomi się, gdy co najmniej jedno z poprzednich zadań zakończy się niepowodzeniem.
         trigger_rule="all_failed" # Wszystkie poprzednie zadania muszą zakończyć się niepowodzeniem, aby to zadanie mogło się uruchomić.
