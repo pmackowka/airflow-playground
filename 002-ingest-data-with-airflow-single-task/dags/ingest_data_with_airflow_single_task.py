@@ -38,14 +38,15 @@ def ingest_data_with_airflow_single_task():
                     "aws_secret_access_key": ab.get_secret("AWS_SECRET_ACCESS_KEY")
                 }
             },
-            install_if_missing=False, # uzywam venv dlatego daje False
+            install_if_missing=False, # używam venv, dlatego daje False
 
         )
         source.select_all_streams()
         read_result = source.read(cache=BigQueryCache(
-            project_name="third-essence-345723",
+            # podmień na własny projekt GCP i ścieżkę do klucza service account
+            project_name="your-gcp-project-id",
             dataset_name="astronomer",
-            credentials_path="/usr/local/airflow/include/sa-ga4-data.json",
+            credentials_path="/usr/local/airflow/include/gcp-service-account.json",
         ))
 
         first_record = next((record for record in read_result["transaction"]))
