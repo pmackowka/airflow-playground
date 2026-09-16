@@ -3,7 +3,10 @@ from datetime import datetime
 from airflow.operators.bash import BashOperator
 from airflow.sensors.filesystem import FileSensor
 
-# Funkcja placeholder dla DummyOperator
+HELION_DIR = "/usr/local/airflow/include"
+HELION_FILE = f"{HELION_DIR}/helion_airflow.txt"
+
+# Funkcja placeholder dla EmptyOperator
 @task
 def start_task():
     return 'Start task'
@@ -23,21 +26,21 @@ def file_sensor_dag():
     create_file = BashOperator(
         task_id='create_file',
         bash_command=(
-            "mkdir -p /Users/p/Documents/VSC/helion_include && "
-            "echo 'Airflow' > /Users/p/Documents/VSC/helion_include/helion_airflow.txt"
+            f"mkdir -p {HELION_DIR} && "
+            f"echo 'Airflow' > {HELION_FILE}"
         )
     )
 
     check_file = FileSensor(
         task_id='check_file',
-        filepath='/Users/p/Documents/VSC/helion_include/helion_airflow.txt',
+        filepath=HELION_FILE,
         poke_interval=5,  # Co 5 sekund sprawdza, czy plik istnieje
         timeout=60  # Maksymalny czas oczekiwania 60 sekund
     )
 
     cat_file = BashOperator(
         task_id='cat_file',
-        bash_command="cat /Users/p/Documents/VSC/helion_include/helion_airflow.txt"
+        bash_command=f"cat {HELION_FILE}"
     )
 
     # Definiowanie kolejności zadań
