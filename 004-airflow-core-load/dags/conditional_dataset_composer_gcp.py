@@ -6,17 +6,17 @@ from airflow.providers.google.cloud.hooks.gcs import GCSHook
 from airflow.datasets import Dataset
 from datetime import datetime
 
-# Definicja datasetów - plik w GCS jako wyzwalacz i przetworzony dataset dla BigQuery
-gcs_file = Dataset("gs://data_stream_gcs/datasets/output.csv")
-bq_table = Dataset("bq://third-essence-345723.temp.output")
-
-# Konfiguracja zmiennych środowiskowych
+# Konfiguracja zmiennych środowiskowych - podmień PROJECT_ID na własny projekt GCP
 GCS_BUCKET = "data_stream_gcs"
 GCS_FILE_PATH = "datasets/output.csv"
 BQ_DATASET = "temp"
 BQ_TABLE = "output"
-PROJECT_ID = "third-essence-345723"
-TOPIC_ID = "projects/third-essence-345723/topics/data_stream"
+PROJECT_ID = "your-gcp-project-id"
+TOPIC_ID = f"projects/{PROJECT_ID}/topics/data_stream"
+
+# Definicja datasetów - plik w GCS jako wyzwalacz i przetworzony dataset dla BigQuery
+gcs_file = Dataset(f"gs://{GCS_BUCKET}/{GCS_FILE_PATH}")
+bq_table = Dataset(f"bq://{PROJECT_ID}.{BQ_DATASET}.{BQ_TABLE}")
 
 # Funkcja tworząca plik bezpośrednio w GCS
 def create_file_in_gcs():
