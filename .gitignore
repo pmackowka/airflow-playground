@@ -1,4 +1,4 @@
-.# Byte-compiled / optimized / DLL files
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -168,3 +168,5 @@ google-cloud-sdk
 service_account.json
 configuration.yml
 pipeline.conf
+airflow.cfg
+**/data/minio/
