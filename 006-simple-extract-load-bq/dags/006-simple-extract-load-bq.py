@@ -2,7 +2,7 @@ import json
 
 from airflow import DAG
 from airflow.models.baseoperator import chain
-from airflow.operators.dummy_operator import DummyOperator
+from airflow.operators.empty import EmptyOperator
 from airflow.providers.google.cloud.sensors.bigquery import BigQueryTableExistenceSensor
 from airflow.providers.google.cloud.operators.bigquery import (
     BigQueryCreateEmptyDatasetOperator,
@@ -113,8 +113,8 @@ with DAG(
         delete_contents=True
     )
 
-    begin = DummyOperator(task_id="begin")
-    end = DummyOperator(task_id="end")
+    begin = EmptyOperator(task_id="begin")
+    end = EmptyOperator(task_id="end")
 
     chain(
         begin,
