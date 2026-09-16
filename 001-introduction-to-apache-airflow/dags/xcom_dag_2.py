@@ -1,7 +1,6 @@
 from airflow import DAG
 from airflow.operators.bash import BashOperator
 from airflow.operators.python import PythonOperator
-from airflow.operators.subdag import SubDagOperator
 from airflow.utils.task_group import TaskGroup
 
 from random import uniform

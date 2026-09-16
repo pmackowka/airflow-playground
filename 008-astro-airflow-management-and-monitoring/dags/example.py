@@ -1,6 +1,6 @@
 from airflow import DAG
 from datetime import datetime
-from airflow.operators.dummy import DummyOperator
+from airflow.operators.empty import EmptyOperator
 
 default_args = {
     'owner': 'Piotr',
@@ -16,7 +16,7 @@ with DAG(
     catchup=False
 ) as dag:
 
-    start = DummyOperator(
+    start = EmptyOperator(
         task_id='example'
     )
 

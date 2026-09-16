@@ -1,8 +1,7 @@
-from datetime import datetime
 from airflow import DAG
 
-from airflow.operators.dummy_operator import DummyOperator
-from airflow.operators.bash_operator import BashOperator
+from airflow.operators.empty import EmptyOperator
+from airflow.operators.bash import BashOperator
 from airflow.operators.python import BranchPythonOperator
 from airflow.models.param import Param
 
@@ -19,10 +18,10 @@ with DAG(
     tags=['Helion'],
     params={
         "branch_choice": Param("A", enum=["A", "B"])
-	}
-	):
+    }
+):
 
-    start = DummyOperator(
+    start = EmptyOperator(
         task_id="start"
     )
 
@@ -48,9 +47,9 @@ with DAG(
         bash_command="ls /airflow-fake", # fikcyjny folder
     )
 
-    end = DummyOperator(
+    end = EmptyOperator(
         task_id="end",
-        # trigger_rule="one_success" # co najminiej jeden udany task
+        # trigger_rule="one_success" # co najmniej jeden udany task
         trigger_rule="none_failed" # Zadanie uruchomi się, gdy żadne z poprzednich zadań nie zakończy się niepowodzeniem (mogą być sukcesy lub zadania zakończone innymi statusami).
     )
 
