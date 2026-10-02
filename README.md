@@ -50,3 +50,7 @@ astro dev start
 
 - Część DAG-ów zawiera twarde wartości demo (np. dane logowania do lokalnego MinIO) — dotyczy wyłącznie usług uruchamianych lokalnie w Dockerze, nie prawdziwych zasobów.
 - Repozytorium to materiał do nauki, nie referencyjna implementacja produkcyjna — różne katalogi celowo pokazują różne podejścia do podobnych problemów (np. klasyczne operatory vs TaskFlow API, `docker-compose` vs Astro CLI).
+
+## Licencja
+
+Własny kod i dokumentacja — [MIT](LICENSE). Fragmenty pochodzące z kursów i tutoriali (Udemy, Helion, Astronomer, Google Cloud) pozostają własnością ich autorów i podlegają ich warunkom; licencja MIT ich nie obejmuje.
