@@ -1,4 +1,4 @@
-# Apache Airflow — notatki i projekty z nauki
+# airflow-playground
 
 Zbiór niezależnych od siebie projektów i ćwiczeń z Apache Airflow, zebranych podczas nauki orkiestracji danych: kursy Udemy, materiały Helion, oficjalne tutoriale Astronomer i Google Cloud.
 
