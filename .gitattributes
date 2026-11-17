@@ -1,0 +1,3 @@
+# GitHub Linguist traktuje SQL jako typ "data" i domyślnie pomija go w statystykach języków.
+# linguist-detectable włącza pliki .sql do paska języków repozytorium.
+*.sql linguist-detectable
