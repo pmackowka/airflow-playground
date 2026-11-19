@@ -1,5 +1,7 @@
 # airflow-playground
 
+[![License: MIT](https://img.shields.io/github/license/pmackowka/airflow-playground)](LICENSE)
+
 Zbiór niezależnych od siebie projektów i ćwiczeń z Apache Airflow, zebranych podczas nauki orkiestracji danych: kursy Udemy, materiały Helion, oficjalne tutoriale Astronomer i Google Cloud.
 
 To **nie jest** jeden spójny produkt — każdy katalog to osobne środowisko z własnym `docker-compose.yaml` lub projektem Astro CLI, uruchamiane niezależnie od pozostałych. Numeracja katalogów odzwierciedla kolejność, w jakiej powstawały, a nie zależności między nimi.
