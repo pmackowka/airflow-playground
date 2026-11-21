@@ -4,11 +4,11 @@ Zestaw niezależnych, mniejszych DAG-ów (materiały Helion) ilustrujących poje
 
 ## Zawartość `dags/`
 
-- `bash-operator.py`, `python-operator.py`, `python-operator-scheduler.py`, `http-operator.py` — podstawowe operatory.
+- `bash_operator.py`, `python_operator.py`, `python_operator_scheduler.py`, `http_operator.py` — podstawowe operatory.
 - `branch.py`, `triggers1.py`, `triggers2.py` — branching (`BranchPythonOperator`) i reguły wyzwalania (`trigger_rule`).
-- `file-sensor.py`, `python-sensor.py`, `http-sensor.py` — sensory: na plik, na warunek w Pythonie, na endpoint HTTP.
+- `file_sensor.py`, `python_sensor.py`, `http_sensor.py` — sensory: na plik, na warunek w Pythonie, na endpoint HTTP.
 - `variable.py`, `params.py`, `jinja.py` — Airflow Variables, parametry DAG-a, szablony Jinja.
-- `xcom.py`, `order_task.py`, `default_dag_args.py`, `example.py`, `example-2.py`, `exampledag.py` — pozostałe przykłady: XCom, kolejność zadań, domyślne argumenty.
+- `xcom.py`, `order_task.py`, `default_dag_args.py`, `example.py`, `example_2.py`, `exampledag.py` — pozostałe przykłady: XCom, kolejność zadań, domyślne argumenty.
 
 ## Jak uruchomić
 
