@@ -4,7 +4,7 @@ Pipeline oparty o wzorzec z oficjalnych materiałów Astronomer: ładowanie dany
 
 ## Zawartość
 
-- `dags/006-simple-extract-load-bq.py` — tworzy dataset i tabelę w BigQuery (jeśli nie istnieją), ładuje dane, uruchamia kontrole jakości wierszy (`BigQueryCheckOperator`, `BigQueryValueCheckOperator`).
+- `dags/simple_extract_load_bq.py` — tworzy dataset i tabelę w BigQuery (jeśli nie istnieją), ładuje dane, uruchamia kontrole jakości wierszy (`BigQueryCheckOperator`, `BigQueryValueCheckOperator`).
 - `dags/include/sql/load_bigquery_forestfire_data.sql` — zapytanie ładujące dane.
 - `dags/include/sql/row_quality_bigquery_forestfire_check.sql` — zapytanie kontroli jakości danych.
 - `dags/include/validation/forestfire_validation.json` — reguły walidacji.

@@ -19,7 +19,7 @@ To **nie jest** jeden spójny produkt — każdy katalog to osobne środowisko z
 | 007 | [apache-airflow-the-hands-on-guide](007-apache-airflow-the-hands-on-guide) | Projekt "Stock Market Pipeline": pobieranie danych giełdowych, MinIO jako data lake, Spark do transformacji, TaskFlow API | Astro CLI, MinIO, Spark |
 | 008 | [astro-airflow-management-and-monitoring](008-astro-airflow-management-and-monitoring) | Zestaw mniejszych DAG-ów: sensory plikowe/HTTP/Python, branching, triggery, zmienne, Jinja, XCom | Astro CLI |
 | 009 | [build-amazon-books-etl-job](009-build-amazon-books-etl-job) | ETL scrapujący listę książek z Amazon.pl (requests + BeautifulSoup) i zapisujący wynik do Postgresa | Airflow (docker-compose), Postgres |
-| 010 | [codelabs-intro-cloud-composer.ipynb](010-codelabs-intro-cloud-composer.ipynb) | Notebook z oficjalnego Google Cloud Codelab: wprowadzenie do Cloud Composer (Airflow zarządzany przez GCP) | Jupyter, Google Cloud Composer |
+| 010 | [010_codelabs_intro_cloud_composer.ipynb](010_codelabs_intro_cloud_composer.ipynb) | Notebook z oficjalnego Google Cloud Codelab: wprowadzenie do Cloud Composer (Airflow zarządzany przez GCP) | Jupyter, Google Cloud Composer |
 
 ## Jak uruchomić
 
